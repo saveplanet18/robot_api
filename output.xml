@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.7.5 on win32)" generated="20220125 18:53:06.474" rpa="true" schemaversion="2">
+<suite id="s1" name="Consumer" source="e:\Robot\workspace\consumer.robot">
+<test id="s1-t1" name="Consumer traffic data work items">
+<kw name="For Each Input Work Item" library="RPA.Robocorp.WorkItems">
+<arg>Process traffic data</arg>
+<doc>Run a keyword or function for each work item in the input queue.</doc>
+<kw name="Process traffic data">
+<kw name="Get Work Item Payload" library="RPA.Robocorp.WorkItems">
+<var>${payload}</var>
+<doc>Get the full JSON payload for a work item.</doc>
+<msg timestamp="20220125 18:53:09.329" level="INFO">${payload} = {'Name': 'Sol Heaton', 'Zip': 3695, 'Items': 'Sauce Labs Onesee', 'Item': 'Sauce Labs Onesee'}</msg>
+<status status="PASS" starttime="20220125 18:53:09.326" endtime="20220125 18:53:09.330"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${traffic_data}</var>
+<arg>${payload}[${WORK_ITEM_NAME}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220125 18:53:09.350" level="FAIL">Dictionary '${payload}' has no key 'traffic_data'.</msg>
+<status status="FAIL" starttime="20220125 18:53:09.332" endtime="20220125 18:53:09.351"/>
+</kw>
+<status status="FAIL" starttime="20220125 18:53:09.319" endtime="20220125 18:53:09.362"/>
+</kw>
+<status status="FAIL" starttime="20220125 18:53:09.312" endtime="20220125 18:53:09.368"/>
+</kw>
+<status status="FAIL" starttime="20220125 18:53:09.302" endtime="20220125 18:53:09.378">Dictionary '${payload}' has no key 'traffic_data'.</status>
+</test>
+<doc>Artificial Intelligence System robot.
+Author Manjunath Kannur
+Produces traffic data work items.</doc>
+<status status="FAIL" starttime="20220125 18:53:06.496" endtime="20220125 18:53:09.392"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Consumer">Consumer</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

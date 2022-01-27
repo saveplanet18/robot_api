@@ -1,0 +1,14 @@
+tasks:
+  Produce traffic data work items:
+    robotTaskName: Produce traffic data work items
+  Consume traffic data work items:
+    robotTaskName: Consume traffic data work items
+
+condaConfigFile: conda.yaml
+artifactsDir: output
+PATH:
+  - .
+PYTHONPATH:
+  - .
+ignoreFiles:
+  - .gitignore
